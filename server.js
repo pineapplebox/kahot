@@ -5,10 +5,10 @@
 
 const express = require("express");
 const kahoot = require("kahoot.js-updated");
-const config = require("./config.json");
 const app = express();
+const port = process.env.PORT || 3000;
 app.use(express.static("public"));
-const listener = app.listen(config.port, () => {
+const listener = app.listen(port, () => {
   console.log("Kahot listening on port " + listener.address().port);
 });
 const io = require("socket.io")(listener);
