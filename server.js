@@ -13,7 +13,6 @@ const listener = app.listen(port, () => {
 });
 const io = require("socket.io")(listener);
 io.on("connection", (socket) => {
-  console.log("A user connected")
   var pin = "";
   var name = ""
   socket.on("pin", (number) => {
